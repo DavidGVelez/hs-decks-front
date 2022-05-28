@@ -1,18 +1,33 @@
 import axios from 'axios'
 
+const URL = `${process.env.VUE_APP_API}/bnet/cards`
+
 const getCards = async () => {
-  console.log('hola')
   try {
-    let res = await axios.get(`${process.env.VUE_APP_API}/bnet/cards`, {
+    let res = await axios.get(URL, {
       headers: {
         'Content-Type': 'application-json',
         'Access-Control-Allow-Origin': '*'
       }
     })
-    return res
+    return res.data
   } catch (e) {
     console.error('Error fetching cards')
   }
 }
 
-export default { getCards }
+const getCard = async (params) => {
+  try {
+    let res = await axios.get(URL + '/' + params.id, {
+      headers: {
+        'Content-Type': 'application-json',
+        'Access-Control-Allow-Origin': '*'
+      }
+    })
+    return res.data
+  } catch (e) {
+    console.error('Error fetching card ', { params })
+  }
+}
+
+export default { getCards, getCard }

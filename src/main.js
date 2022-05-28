@@ -3,8 +3,13 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import './assets/tailwind.css'
+import { worker } from './mocks/browser'
 
 Vue.config.productionTip = false
+
+if (process.env.VUE_APP_NODE_ENV === 'development') {
+  worker.start()
+}
 
 new Vue({
   router,
