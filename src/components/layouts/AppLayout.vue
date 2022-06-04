@@ -1,10 +1,10 @@
 <template>
-  <main class="AppLayout">
+  <div>
     <Nav />
-    <div>
+    <main class="mx-5 mt-10">
       <router-view />
-    </div>
-  </main>
+    </main>
+  </div>
 </template>
 
 <script>

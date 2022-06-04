@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import AppLayout from '@/components/layouts/AppLayout'
 import Cards from '@/views/CardsView'
+import Card from '@/views/CardView'
 import Home from '@/views/HomeView'
 Vue.use(VueRouter)
 
@@ -20,6 +21,11 @@ const routes = [
         path: 'cards',
         name: 'cards',
         component: Cards
+      },
+      {
+        path: 'card/:slug',
+        name: 'card',
+        component: Card
       }
     ]
   }

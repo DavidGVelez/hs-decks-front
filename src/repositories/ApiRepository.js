@@ -18,7 +18,7 @@ const getCards = async () => {
 
 const getCard = async (params) => {
   try {
-    let res = await axios.get(URL + '/' + params.id, {
+    let res = await axios.get(URL + '/' + params.slug || params.id, {
       headers: {
         'Content-Type': 'application-json',
         'Access-Control-Allow-Origin': '*'

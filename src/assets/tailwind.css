@@ -3,3 +3,11 @@
 @tailwind components;
 
 @tailwind utilities;
+
+
+.title-lg {
+    @apply text-2xl font-bold mb-3 ;
+}
+.card {
+    @apply rounded-md bg-slate-100 p-5;
+}
